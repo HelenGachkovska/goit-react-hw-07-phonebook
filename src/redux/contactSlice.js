@@ -25,13 +25,12 @@ const handleFulfilledAdd = (state, { payload }) => {
   state.isLoading = false;
   state.error = null;
   state.contacts.push(payload);
-  console.log("payload", payload)
 };
 
 const handleFulfilledDelete = (state, { payload }) => {
   state.isLoading = false;
   state.error = null;
-  const index = state.contacts.findIndex(item => item.id === {payload});
+  const index = state.contacts.findIndex(item => item.id === payload.id);
   state.contacts.splice(index, 1);
   // state.contacts = state.contacts.filter(el => el.id !== payload);
 };
